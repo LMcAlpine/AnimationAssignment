@@ -5,6 +5,7 @@ const ASSET_MANAGER = new AssetManager();
 
 ASSET_MANAGER.queueDownload("./halo.png");
 ASSET_MANAGER.queueDownload("./shootingTest.png");
+ASSET_MANAGER.queueDownload("./gruntWalk-Sheet.png");
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
