@@ -7,6 +7,8 @@ class Player {
 
         this.spritesheet3 = ASSET_MANAGER.getAsset("./gruntWalk-Sheet.png");
 
+        this.moon = ASSET_MANAGER.getAsset("./moon.png");
+
 
 
 
@@ -37,15 +39,17 @@ class Player {
     }
 
     draw(ctx) {
-        // ctx.drawImage(this.spritesheet, 453, 32, 26, 48, 0, 0, 48, 96);
 
-        this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
 
-        this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
+        ctx.drawImage(this.moon,0,0);
 
-        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
-        // this.animation2.drawFrame(gameEngine.clockTick, ctx, 100, 0, 3);
-        // this.animation3.drawFrame(gameEngine.clockTick, ctx, 200, 0, 3);
+
+        // this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
+
+        // this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
+
+        // this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
+
     }
 
 }
