@@ -7,7 +7,15 @@ class Player {
 
         this.spritesheet3 = ASSET_MANAGER.getAsset("./gruntWalk-Sheet.png");
 
+        this.moon = ASSET_MANAGER.getAsset("./moon.png");
 
+        this.elite = ASSET_MANAGER.getAsset("./elitespritesheet.png");
+        this.brute = ASSET_MANAGER.getAsset("./brutesprites.png");
+
+
+
+
+        this.eliteLeft = ASSET_MANAGER.getAsset("./elitespritesheetLeft.png");
 
 
         this.animation = new Animator(this.spritesheet, 0, 0, 56, 55, 22, 0.075, 0, false, true);
@@ -20,10 +28,19 @@ class Player {
 
         this.grunt = new Animator(this.spritesheet3, 0, 0, 64, 64, 7, 0.095, 0, false, true);
 
+        this.elite = new Animator(this.elite, 0, 0, 64, 64, 8, 0.095, 0, false, true);
+
+        this.eliteLeft = new Animator(this.eliteLeft, 0, 0, 64, 64, 8, 0.095, 0, true, true);
+
+        this.brute = new Animator(this.brute, 0, 0, 64, 64, 8, 0.095, 0, false, true);
+
+
         this.x = 0;
         this.y = 0;
         // pixels per second
         this.speed = 250;
+
+        this.x2 = 1920;
 
 
 
@@ -31,21 +48,34 @@ class Player {
 
     update() {
         this.x += this.speed * this.game.clockTick;
+        this.x2 -= this.speed * this.game.clockTick;
         if (this.x > 1920) {
             this.x = 0;
+        }
+
+        if (this.x2 < 0) {
+            this.x2 = 1920;
         }
     }
 
     draw(ctx) {
-        // ctx.drawImage(this.spritesheet, 453, 32, 26, 48, 0, 0, 48, 96);
 
-        this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
 
-        this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
+        //ctx.drawImage(this.moon,0,0);
 
-        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
-        // this.animation2.drawFrame(gameEngine.clockTick, ctx, 100, 0, 3);
-        // this.animation3.drawFrame(gameEngine.clockTick, ctx, 200, 0, 3);
+
+        // this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
+
+        // this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
+
+        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 3);
+
+        this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 3);
+
+        this.eliteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 800, 3);
+
+        this.brute.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 3);
+
     }
 
 }
