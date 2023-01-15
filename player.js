@@ -15,6 +15,9 @@ class Player {
 
 
 
+        this.eliteLeft = ASSET_MANAGER.getAsset("./elitespritesheetLeft.png");
+
+
         this.animation = new Animator(this.spritesheet, 0, 0, 56, 55, 22, 0.075, 0, false, true);
         // this.animation = new Animator(this.spritesheet, 372, 390, 26, 48, 3, 1, 9, false, true);
         // this.animation2 = new Animator(this.spritesheet, 477, 390, 23, 48, 2, 1, 9, false, true);
@@ -27,6 +30,8 @@ class Player {
 
         this.elite = new Animator(this.elite, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
+        this.eliteLeft = new Animator(this.eliteLeft, 0, 0, 64, 64, 8, 0.095, 0, true, true);
+
         this.brute = new Animator(this.brute, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
 
@@ -35,14 +40,21 @@ class Player {
         // pixels per second
         this.speed = 250;
 
+        this.x2 = 1920;
+
 
 
     }
 
     update() {
         this.x += this.speed * this.game.clockTick;
+        this.x2 -= this.speed * this.game.clockTick;
         if (this.x > 1920) {
             this.x = 0;
+        }
+
+        if (this.x2 < 0) {
+            this.x2 = 1920;
         }
     }
 
@@ -56,11 +68,13 @@ class Player {
 
         // this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
 
-        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
+        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 3);
 
-        this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
+        this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 3);
 
-        this.brute.drawFrame(this.game.clockTick,ctx,this.x,this.y+300,5);
+        this.eliteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 800, 3);
+
+        this.brute.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 3);
 
     }
 
