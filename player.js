@@ -40,7 +40,7 @@ class Player {
 
         this.brute = new Animator(this.brute, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
-        this.bruteLeft = new Animator(this.bruteLeft, 0, 0, 64, 64, 8, 0.095, 0, true, true);
+        this.bruteLeft = new Animator(this.bruteLeft, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
 
         this.x = 0;
