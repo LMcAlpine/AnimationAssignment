@@ -9,6 +9,8 @@ class Player {
 
         this.moon = ASSET_MANAGER.getAsset("./moon.png");
 
+        this.elite = ASSET_MANAGER.getAsset("./elitespritesheet.png");
+
 
 
 
@@ -21,6 +23,8 @@ class Player {
         this.shooting = new Animator(this.spritesheet2, 10, 0, 85, 55, 22, 0.075, 0, false, true);
 
         this.grunt = new Animator(this.spritesheet3, 0, 0, 64, 64, 7, 0.095, 0, false, true);
+
+        this.elite = new Animator(this.elite, 0, 0, 64, 64, 8, 0.130, 0, false, true);
 
         this.x = 0;
         this.y = 0;
@@ -41,14 +45,16 @@ class Player {
     draw(ctx) {
 
 
-        ctx.drawImage(this.moon,0,0);
+        //ctx.drawImage(this.moon,0,0);
 
 
         // this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
 
         // this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
 
-        // this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
+        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
+
+        this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
 
     }
 
