@@ -8,6 +8,7 @@ ASSET_MANAGER.queueDownload("./shootingTest.png");
 ASSET_MANAGER.queueDownload("./gruntWalk-Sheet.png");
 ASSET_MANAGER.queueDownload("./moon.png");
 ASSET_MANAGER.queueDownload("./elitespritesheet.png");
+ASSET_MANAGER.queueDownload("./brutesprites.png");
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");

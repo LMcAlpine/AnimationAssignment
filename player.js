@@ -10,6 +10,7 @@ class Player {
         this.moon = ASSET_MANAGER.getAsset("./moon.png");
 
         this.elite = ASSET_MANAGER.getAsset("./elitespritesheet.png");
+        this.brute = ASSET_MANAGER.getAsset("./brutesprites.png");
 
 
 
@@ -24,7 +25,10 @@ class Player {
 
         this.grunt = new Animator(this.spritesheet3, 0, 0, 64, 64, 7, 0.095, 0, false, true);
 
-        this.elite = new Animator(this.elite, 0, 0, 64, 64, 8, 0.130, 0, false, true);
+        this.elite = new Animator(this.elite, 0, 0, 64, 64, 8, 0.095, 0, false, true);
+
+        this.brute = new Animator(this.brute, 0, 0, 64, 64, 8, 0.095, 0, false, true);
+
 
         this.x = 0;
         this.y = 0;
@@ -55,6 +59,8 @@ class Player {
         this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 5);
 
         this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
+
+        this.brute.drawFrame(this.game.clockTick,ctx,this.x,this.y+300,5);
 
     }
 
