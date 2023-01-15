@@ -7,10 +7,14 @@ class Player {
 
         this.spritesheet3 = ASSET_MANAGER.getAsset("./gruntWalk-Sheet.png");
 
+        this.gruntWalkLeft = ASSET_MANAGER.getAsset("./gruntWalkLeft.png");
+
         this.moon = ASSET_MANAGER.getAsset("./moon.png");
 
         this.elite = ASSET_MANAGER.getAsset("./elitespritesheet.png");
         this.brute = ASSET_MANAGER.getAsset("./brutesprites.png");
+
+        this.bruteLeft = ASSET_MANAGER.getAsset("./brutespritesLeft.png");
 
 
 
@@ -28,11 +32,15 @@ class Player {
 
         this.grunt = new Animator(this.spritesheet3, 0, 0, 64, 64, 7, 0.095, 0, false, true);
 
+        this.gruntLeft = new Animator(this.gruntWalkLeft, 0, 0, 64, 64, 7, 0.095, 0, true, true);
+
         this.elite = new Animator(this.elite, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
         this.eliteLeft = new Animator(this.eliteLeft, 0, 0, 64, 64, 8, 0.095, 0, true, true);
 
         this.brute = new Animator(this.brute, 0, 0, 64, 64, 8, 0.095, 0, false, true);
+
+        this.bruteLeft = new Animator(this.bruteLeft, 0, 0, 64, 64, 8, 0.095, 0, true, true);
 
 
         this.x = 0;
@@ -70,11 +78,15 @@ class Player {
 
         this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 3);
 
+        this.gruntLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 464, 3);
+
         this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 3);
 
         this.eliteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 800, 3);
 
         this.brute.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 3);
+
+        this.bruteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 150, 3);
 
     }
 
