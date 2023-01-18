@@ -16,6 +16,8 @@ class Player {
 
         this.bruteLeft = ASSET_MANAGER.getAsset("./brutespritesLeft.png");
 
+        this.gruntDead = ASSET_MANAGER.getAsset("./gruntKilledFleeing-Sheet.png");
+
 
 
 
@@ -27,6 +29,8 @@ class Player {
         // this.animation2 = new Animator(this.spritesheet, 477, 390, 23, 48, 2, 1, 9, false, true);
 
         // this.animation3 = new Animator(this.spritesheet, 539, 390, 15, 48, 3, 1, 9, false, true);
+
+        this.gruntKilled = new Animator(this.gruntDead, 0, 0, 48, 48, 5, 0.2, 0, false, true);
 
         this.shooting = new Animator(this.spritesheet2, 10, 0, 85, 55, 22, 0.075, 0, false, true);
 
@@ -88,6 +92,8 @@ class Player {
 
         this.bruteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 150, 3);
 
+
+        this.gruntKilled.drawFrame(this.game.clockTick, ctx, 100, this.y + 100, 3);
     }
 
 }

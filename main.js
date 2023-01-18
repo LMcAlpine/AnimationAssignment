@@ -12,11 +12,29 @@ ASSET_MANAGER.queueDownload("./elitespritesheetLeft.png");
 ASSET_MANAGER.queueDownload("./brutesprites.png");
 ASSET_MANAGER.queueDownload("./brutespritesLeft.png");
 
+ASSET_MANAGER.queueDownload("./gruntKilledFleeing-Sheet.png");
+
 ASSET_MANAGER.queueDownload("./gruntWalkLeft.png");
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
+
+
+
+	canvas.requestPointerLock = canvas.requestPointerLock ||
+		canvas.mozRequestPointerLock;
+
+
+
+
+	if (document.pointerLockElement === canvas ||
+		document.mozPointerLockElement === canvas) {
+		console.log('The pointer lock status is now locked');
+	} else {
+		console.log('The pointer lock status is now unlocked');
+	}
+
 
 	ctx.imageSmoothingEnabled = false;
 
