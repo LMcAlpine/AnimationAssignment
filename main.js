@@ -20,6 +20,22 @@ ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
 
+
+
+	canvas.requestPointerLock = canvas.requestPointerLock ||
+		canvas.mozRequestPointerLock;
+
+
+
+
+	if (document.pointerLockElement === canvas ||
+		document.mozPointerLockElement === canvas) {
+		console.log('The pointer lock status is now locked');
+	} else {
+		console.log('The pointer lock status is now unlocked');
+	}
+
+
 	ctx.imageSmoothingEnabled = false;
 
 
