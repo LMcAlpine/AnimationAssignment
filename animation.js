@@ -26,6 +26,9 @@ class Player {
 
 
 
+
+
+
         this.cityfar = ASSET_MANAGER.getAsset("./city/cityfar.png")
         this.nightsky = ASSET_MANAGER.getAsset("./city/nightsky.png")
         this.cityclose = ASSET_MANAGER.getAsset("./city/cityclose.png")
@@ -54,6 +57,8 @@ class Player {
         this.bruteLeft = new Animator(this.bruteLeft, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
 
+
+
         this.x = 0;
         this.y = 0;
         // pixels per second
@@ -63,6 +68,12 @@ class Player {
 
         this.x3 = 0;
         this.x4 = this.cityclose.width;
+
+
+
+
+        // this.layer = new Layer(this.cityclose, 0.5);
+        // game.addEntity(this.layer);
 
 
 
@@ -90,24 +101,27 @@ class Player {
 
         ctx.drawImage(this.cityfar, 0, 0);
 
+        // this.layer.update();f
+        // this.layer.draw(ctx)
+
         //}
 
 
-        if (this.x3 < -this.cityclose.width) {
-            this.x3 = this.cityclose.width - scrollSpeed + this.x4;
-        }
-        else {
-            this.x3 -= scrollSpeed;
-        } if (this.x4 < -this.cityclose.width) {
-            this.x4 = this.cityclose.width - scrollSpeed + this.x3;
-        }
-        else {
-            this.x4 -= scrollSpeed;
-        }
-        ctx.drawImage(this.cityclose, this.x3, 0);
+        // if (this.x3 < -this.cityclose.width) {
+        //     this.x3 = this.cityclose.width - scrollSpeed + this.x4;
+        // }
+        // else {
+        //     this.x3 -= scrollSpeed;
+        // } if (this.x4 < -this.cityclose.width) {
+        //     this.x4 = this.cityclose.width - scrollSpeed + this.x3;
+        // }
+        // else {
+        //     this.x4 -= scrollSpeed;
+        // }
+        // ctx.drawImage(this.cityclose, this.x3, 0);
 
-        // if (this.x3 < 0) {
-        ctx.drawImage(this.cityclose, this.x4, 0);
+        // // if (this.x3 < 0) {
+        // ctx.drawImage(this.cityclose, this.x4, 0);
 
 
 
@@ -131,6 +145,8 @@ class Player {
 
 
         this.gruntKilled.drawFrame(this.game.clockTick, ctx, 100, this.y + 100, 3);
+
+      
     }
 
 }
