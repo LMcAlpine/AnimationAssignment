@@ -22,6 +22,8 @@ ASSET_MANAGER.queueDownload("./gruntWalkLeft.png");
 ASSET_MANAGER.queueDownload("./droppodstest-Sheet2.png");
 ASSET_MANAGER.queueDownload("./droppod_impact_ground.png");
 
+ASSET_MANAGER.queueDownload("./podStill.png");
+
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
