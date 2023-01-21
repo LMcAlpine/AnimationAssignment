@@ -2,8 +2,11 @@ class ODST {
     constructor(game) {
         this.game = game;
         this.drop = ASSET_MANAGER.getAsset("./droppodstest-Sheet2.png");
+        this.impact = ASSET_MANAGER.getAsset("./droppod_impact_ground.png");
 
         this.drop = new Animator(this.drop, 0, 0, 128, 128, 3, 0.1, 0, false, true);
+
+        this.impact = new Animator(this.impact, 0, 0, 196, 196, 4, 0.1, 0, false, false);
 
 
 
@@ -36,11 +39,13 @@ class ODST {
 
     draw(ctx) {
 
-        // if (!this.stop) {
-        this.drop.drawFrame(this.game.clockTick, ctx, 200, this.y, 3);
-        // } else {
-        // this.drop.drawFrame(this.game.clockTick, ctx, 200, this.y, 3);
-        //  }
+        if (!this.stop) {
+            this.drop.drawFrame(this.game.clockTick, ctx, 200, this.y, 3);
+        } else {
+            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 76, this.y - 186, 3);
+        }
+
+
     }
 
     applyGravity() {
