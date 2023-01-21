@@ -4,9 +4,12 @@ class ODST {
         this.drop = ASSET_MANAGER.getAsset("./droppodstest-Sheet2.png");
         this.impact = ASSET_MANAGER.getAsset("./droppod_impact_ground.png");
 
+        this.still = ASSET_MANAGER.getAsset("./podStill.png");
+
         this.drop = new Animator(this.drop, 0, 0, 128, 128, 3, 0.1, 0, false, true);
 
-        this.impact = new Animator(this.impact, 0, 0, 196, 196, 4, 0.1, 0, false, false);
+        this.impact = new Animator(this.impact, 0, 0, 200, 200, 10, 0.1, 0, false, false);
+
 
 
 
@@ -42,8 +45,9 @@ class ODST {
         if (!this.stop) {
             this.drop.drawFrame(this.game.clockTick, ctx, 200, this.y, 3);
         } else {
-            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 76, this.y - 186, 3);
+            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 38, this.y - 144, 3);
         }
+
 
 
     }
