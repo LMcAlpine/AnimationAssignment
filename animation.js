@@ -24,6 +24,13 @@ class Player {
         this.eliteLeft = ASSET_MANAGER.getAsset("./elitespritesheetLeft.png");
 
 
+
+
+        this.cityfar = ASSET_MANAGER.getAsset("./city/cityfar.png")
+        this.nightsky = ASSET_MANAGER.getAsset("./city/nightsky.png")
+        this.cityclose = ASSET_MANAGER.getAsset("./city/cityclose.png")
+
+
         this.animation = new Animator(this.spritesheet, 0, 0, 56, 55, 22, 0.075, 0, false, true);
         // this.animation = new Animator(this.spritesheet, 372, 390, 26, 48, 3, 1, 9, false, true);
         // this.animation2 = new Animator(this.spritesheet, 477, 390, 23, 48, 2, 1, 9, false, true);
@@ -54,6 +61,9 @@ class Player {
 
         this.x2 = 1920;
 
+        this.x3 = 0;
+        this.x4 = this.cityclose.width;
+
 
 
     }
@@ -73,7 +83,34 @@ class Player {
     draw(ctx) {
 
 
-        //ctx.drawImage(this.moon,0,0);
+
+
+        //ctx.drawImage(this.moon, 0, 0);
+        ctx.drawImage(this.nightsky, 0, 0);
+
+        ctx.drawImage(this.cityfar, 0, 0);
+
+        //}
+
+
+        if (this.x3 < -this.cityclose.width) {
+            this.x3 = this.cityclose.width - scrollSpeed + this.x4;
+        }
+        else {
+            this.x3 -= scrollSpeed;
+        } if (this.x4 < -this.cityclose.width) {
+            this.x4 = this.cityclose.width - scrollSpeed + this.x3;
+        }
+        else {
+            this.x4 -= scrollSpeed;
+        }
+        ctx.drawImage(this.cityclose, this.x3, 0);
+
+        // if (this.x3 < 0) {
+        ctx.drawImage(this.cityclose, this.x4, 0);
+
+
+
 
 
         // this.animation.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5);
