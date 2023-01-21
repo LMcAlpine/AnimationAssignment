@@ -3,6 +3,9 @@ const gameEngine = new GameEngine();
 const ASSET_MANAGER = new AssetManager();
 
 
+ASSET_MANAGER.queueDownload("./city/cityfar.png")
+ASSET_MANAGER.queueDownload("./city/nightsky.png")
+ASSET_MANAGER.queueDownload("./city/cityclose.png")
 ASSET_MANAGER.queueDownload("./halo.png");
 ASSET_MANAGER.queueDownload("./shootingTest.png");
 ASSET_MANAGER.queueDownload("./gruntWalk-Sheet.png");
