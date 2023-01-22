@@ -123,7 +123,7 @@ class Animation {
         this.bruteLeft.drawFrame(this.game.clockTick, ctx, this.x2 + 200, this.y + 700, 3);
 
 
-        this.gruntKilled.drawFrame(this.game.clockTick, ctx, 1600, this.y + 370, 3);
+        this.gruntKilled.drawFrame(this.game.clockTick, ctx, 1800, this.y + 370, 3);
 
 
     }
