@@ -2,17 +2,25 @@ class ODST {
     constructor(game) {
         this.game = game;
         this.drop = ASSET_MANAGER.getAsset("./droppodstest-Sheet2.png");
-        this.impact = ASSET_MANAGER.getAsset("./droppod_impact_ground.png");
+        // this.impact = ASSET_MANAGER.getAsset("./droppod_impact_ground.png");
+        this.impact = ASSET_MANAGER.getAsset("./droppod_impact_with_odst.png");
 
         this.still = ASSET_MANAGER.getAsset("./podStill.png");
 
         this.city = ASSET_MANAGER.getAsset("./city1.png");
 
+        this.odstCharacter = ASSET_MANAGER.getAsset("./odst.png");
+
         this.drop = new Animator(this.drop, 0, 0, 128, 128, 3, 0.1, 0, false, true);
 
-        this.impact = new Animator(this.impact, 0, 0, 200, 200, 10, 0.1, 0, false, false);
+        // this.impact = new Animator(this.impact, 0, 0, 200, 200, 10, 0.1, 0, false, false);
 
         this.still = new Animator(this.still, 0, 0, 42, 65, 1, 1, 0, false, true);
+
+
+        this.impact = new Animator(this.impact, 0, 0, 170, 80, 9, 0.2, 0, false, false);
+
+        this.odst = new Animator(this.odstCharacter, 0, 0, 64, 64, 8, 0.095, 0, false, true);
 
 
 
@@ -23,10 +31,21 @@ class ODST {
         this.x = 0;
         this.y = 0;
 
+        this.x2 = 260;
+
         this.cb = new CollisionBlock({ position: { x: 200, y: 800 } });
     }
 
     update() {
+
+
+        //this.x2 += 250 * this.game.clockTick;
+
+        if (this.x2 > 1920) {
+            this.x2 = 0;
+        }
+
+
 
 
 
@@ -60,13 +79,18 @@ class ODST {
         }
 
         else if (this.stop) {
-            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 38, this.y - 180, 3);
+            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 38, this.y + 2.5, 3);
 
         }
 
         if (this.impact.isDone()) {
-            this.still.drawFrame(this.game.clockTick, ctx, 318, this.y + 20, 3);
+
+            this.still.drawFrame(this.game.clockTick, ctx, 294, this.y + 20, 3);
+            this.x2 += 150 * this.game.clockTick;
+            this.odst.drawFrame(this.game.clockTick, ctx, this.x2, 740, 3);
         }
+
+
 
 
 

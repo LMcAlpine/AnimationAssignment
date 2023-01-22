@@ -26,6 +26,10 @@ ASSET_MANAGER.queueDownload("./podStill.png");
 
 ASSET_MANAGER.queueDownload("./city1.png");
 
+ASSET_MANAGER.queueDownload("./droppod_impact_with_odst.png");
+
+ASSET_MANAGER.queueDownload("./odst.png");
+
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
@@ -73,9 +77,9 @@ ASSET_MANAGER.downloadAll(() => {
 
 
 
-	layer = new Layer(cityfar, 0.4);
+	//layer = new Layer(cityfar, 0.4);
 
-	gameEngine.addEntity(layer);
+	//gameEngine.addEntity(layer);
 
 
 	layer = new Layer(nightsky, 0);
