@@ -1,4 +1,4 @@
-class Player {
+class Animation {
     constructor(game) {
         this.game = game;
         this.spritesheet = ASSET_MANAGER.getAsset("./halo.png");
@@ -97,31 +97,10 @@ class Player {
 
 
         //ctx.drawImage(this.moon, 0, 0);
-        ctx.drawImage(this.nightsky, 0, 0);
+        // ctx.drawImage(this.nightsky, 0, 0);
 
-        ctx.drawImage(this.cityfar, 0, 0);
+        // ctx.drawImage(this.cityfar, 0, 0);
 
-        // this.layer.update();f
-        // this.layer.draw(ctx)
-
-        //}
-
-
-        // if (this.x3 < -this.cityclose.width) {
-        //     this.x3 = this.cityclose.width - scrollSpeed + this.x4;
-        // }
-        // else {
-        //     this.x3 -= scrollSpeed;
-        // } if (this.x4 < -this.cityclose.width) {
-        //     this.x4 = this.cityclose.width - scrollSpeed + this.x3;
-        // }
-        // else {
-        //     this.x4 -= scrollSpeed;
-        // }
-        // ctx.drawImage(this.cityclose, this.x3, 0);
-
-        // // if (this.x3 < 0) {
-        // ctx.drawImage(this.cityclose, this.x4, 0);
 
 
 
@@ -131,22 +110,22 @@ class Player {
 
         // this.shooting.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 5);
 
-        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 600, 3);
+        this.grunt.drawFrame(this.game.clockTick, ctx, this.x, this.y + 760, 3);
 
-        this.gruntLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 464, 3);
+        // this.gruntLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 464, 3);
 
-        this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 3);
+        // this.elite.drawFrame(this.game.clockTick, ctx, this.x, this.y, 3);
 
-        this.eliteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 800, 3);
+        this.eliteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 705, 3);
 
-        this.brute.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 3);
+        //  this.brute.drawFrame(this.game.clockTick, ctx, this.x, this.y + 300, 3);
 
-        this.bruteLeft.drawFrame(this.game.clockTick, ctx, this.x2, this.y + 150, 3);
+        this.bruteLeft.drawFrame(this.game.clockTick, ctx, this.x2 + 200, this.y + 700, 3);
 
 
-        this.gruntKilled.drawFrame(this.game.clockTick, ctx, 100, this.y + 100, 3);
+        this.gruntKilled.drawFrame(this.game.clockTick, ctx, 1600, this.y + 370, 3);
 
-      
+
     }
 
 }
