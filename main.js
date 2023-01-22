@@ -24,6 +24,8 @@ ASSET_MANAGER.queueDownload("./droppod_impact_ground.png");
 
 ASSET_MANAGER.queueDownload("./podStill.png");
 
+ASSET_MANAGER.queueDownload("./city1.png");
+
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
@@ -52,11 +54,21 @@ ASSET_MANAGER.downloadAll(() => {
 
 
 
+
+
+	let animation = new Animation(gameEngine);
+	gameEngine.addEntity(animation);
+	//gameEngine.player = player;
+
 	let odst = new ODST(gameEngine);
 	gameEngine.addEntity(odst);
 
+
+
+
 	let layer = new Layer(cityclose, 0.2);
 	gameEngine.addEntity(layer);
+
 
 
 
@@ -73,10 +85,9 @@ ASSET_MANAGER.downloadAll(() => {
 
 
 
-	// let player = new Player(gameEngine);
-	// gameEngine.addEntity(player);
 
-	//gameEngine.player = player;
+
+
 
 	//let camera = new Camera();
 	//gameEngine.addEntity(camera);

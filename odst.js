@@ -6,9 +6,13 @@ class ODST {
 
         this.still = ASSET_MANAGER.getAsset("./podStill.png");
 
+        this.city = ASSET_MANAGER.getAsset("./city1.png");
+
         this.drop = new Animator(this.drop, 0, 0, 128, 128, 3, 0.1, 0, false, true);
 
         this.impact = new Animator(this.impact, 0, 0, 200, 200, 10, 0.1, 0, false, false);
+
+        this.still = new Animator(this.still, 0, 0, 42, 65, 1, 1, 0, false, true);
 
 
 
@@ -42,11 +46,33 @@ class ODST {
 
     draw(ctx) {
 
+        ctx.save();
+        ctx.scale(2.5, 2.5);
+        ctx.translate(0, -this.city.height + (1080 / 2.5) + 175)
+
+        ctx.drawImage(this.city, 0, 0);
+
+        ctx.restore();
         if (!this.stop) {
             this.drop.drawFrame(this.game.clockTick, ctx, 200, this.y, 3);
-        } else {
-            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 38, this.y - 144, 3);
+
+
         }
+
+        else if (this.stop) {
+            this.impact.drawFrame(this.game.clockTick, ctx, 200 - 38, this.y - 180, 3);
+
+        }
+
+        if (this.impact.isDone()) {
+            this.still.drawFrame(this.game.clockTick, ctx, 318, this.y + 20, 3);
+        }
+
+
+
+
+
+
 
 
 
