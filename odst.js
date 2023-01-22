@@ -11,6 +11,8 @@ class ODST {
 
         this.odstCharacter = ASSET_MANAGER.getAsset("./odst.png");
 
+        this.redODST = ASSET_MANAGER.getAsset("./redODST.png");
+
         this.drop = new Animator(this.drop, 0, 0, 128, 128, 3, 0.1, 0, false, true);
 
         // this.impact = new Animator(this.impact, 0, 0, 200, 200, 10, 0.1, 0, false, false);
@@ -21,6 +23,8 @@ class ODST {
         this.impact = new Animator(this.impact, 0, 0, 170, 80, 9, 0.2, 0, false, false);
 
         this.odst = new Animator(this.odstCharacter, 0, 0, 64, 64, 8, 0.095, 0, false, true);
+
+        this.redODST = new Animator(this.redODST, 0, 0, 64, 64, 3, 0.095, 0, false, true);
 
 
 
@@ -69,6 +73,7 @@ class ODST {
         ctx.scale(2.5, 2.5);
         ctx.translate(0, -this.city.height + (1080 / 2.5) + 175)
 
+
         ctx.drawImage(this.city, 0, 0);
 
         ctx.restore();
@@ -89,6 +94,9 @@ class ODST {
             this.x2 += 150 * this.game.clockTick;
             this.odst.drawFrame(this.game.clockTick, ctx, this.x2, 740, 3);
         }
+
+        this.redODST.drawFrame(this.game.clockTick, ctx, 1600, 340, 3);
+
 
 
 

@@ -29,6 +29,7 @@ ASSET_MANAGER.queueDownload("./city1.png");
 ASSET_MANAGER.queueDownload("./droppod_impact_with_odst.png");
 
 ASSET_MANAGER.queueDownload("./odst.png");
+ASSET_MANAGER.queueDownload("./redODST.png");
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
